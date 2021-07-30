@@ -71,7 +71,7 @@ const GroupProgress = () => {
             </Grid>
             <Grid item xs={12}>
                 <Button color="primary">
-                    提交
+                    输出
                 </Button>
             </Grid>
       </Grid>
