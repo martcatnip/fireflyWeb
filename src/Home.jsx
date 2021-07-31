@@ -10,7 +10,8 @@ import GameData from './GameData.jsx'
 import GameDataOut from './GameDataOut.jsx'
 import ReadDataIn from './ReadDataIn.jsx'
 import ReadDataOut from './ReadDataOut.jsx'
-
+import GroupProgress from './GroupProgress.jsx'
+import StudentProgress from './StudentProgress.jsx'
 
 const Home = () => {
     const [selectedTab, setSelectedTab] = React.useState(0);
@@ -46,6 +47,8 @@ const Home = () => {
         {selectedTab === 2 && <GameDataOut/>}
         {selectedTab === 3 && <ReadDataIn/>}
         {selectedTab === 4 && <ReadDataOut/>}
+		{selectedTab === 5 && <GroupProgress/>}
+		{selectedTab === 6 && <StudentProgress/>}
     </div>
   );
 }
