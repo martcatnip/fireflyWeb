@@ -3,5 +3,5 @@
     "config_version": 20210101,
     "name": "FireflyApp",
     "location": "US-VA",
-    "deployment_model": "LOCAL"
+    "deployment_model": "GLOBAL"
 }
