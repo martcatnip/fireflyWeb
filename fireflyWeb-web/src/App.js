@@ -58,8 +58,8 @@ export default App;*/
 
 import React from "react";
 import LoginScreen from "./components/LoginScreen";
-//import TaskApp from "./TaskApp";
-import Home from "./Home.jsx";
+import TaskApp from "./TaskApp";
+//import Home from "./Home.jsx";
 import RealmApolloProvider from "./graphql/RealmApolloProvider";
 import { useRealmApp, RealmAppProvider } from "./RealmApp";
 
@@ -76,7 +76,7 @@ export default function App() {
     <RealmAppProvider appId={APP_ID}>
       <RequireLoggedInUser>
         <RealmApolloProvider>
-          <Home />
+          <TaskApp />
         </RealmApolloProvider>
       </RequireLoggedInUser>
     </RealmAppProvider>
