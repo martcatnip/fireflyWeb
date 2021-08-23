@@ -1,4 +1,4 @@
-/*import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import { Redirect } from "react-router-dom";
 import Home from './Home.jsx';
@@ -30,6 +30,16 @@ function Login({ setUser }) {
   return <button onClick={loginAnonymous}>Log In</button>;
 }
 
+/*function App() {
+  return (
+    <BrowserRouter>
+    <Switch>
+      <Redirect exact from="/" to="/home/about" />
+      <Route exact path="/home/:page?" render={props => <Home {...props} />} />
+    </Switch>
+    </BrowserRouter>
+  );
+}*/
 const App = () => {
   // Keep the logged in Realm user in local state. This lets the app re-render
   // whenever the current user changes (e.g. logs in or logs out).
@@ -52,33 +62,7 @@ const App = () => {
   );
 }
 
-export default App;*/
+export default App;
 
 
 
-import React from "react";
-import LoginScreen from "./components/LoginScreen";
-//import TaskApp from "./TaskApp";
-import Home from "./Home.jsx";
-import RealmApolloProvider from "./graphql/RealmApolloProvider";
-import { useRealmApp, RealmAppProvider } from "./RealmApp";
-
-export const APP_ID = "fireflyapp-rkzpw";
-
-const RequireLoggedInUser = ({ children }) => {
-  // Only render children if there is a logged in user.
-  const app = useRealmApp();
-  return app.currentUser ? children : <LoginScreen />;
-};
-
-export default function App() {
-  return (
-    <RealmAppProvider appId={APP_ID}>
-      <RequireLoggedInUser>
-        <RealmApolloProvider>
-          <Home />
-        </RealmApolloProvider>
-      </RequireLoggedInUser>
-    </RealmAppProvider>
-  );
-}
