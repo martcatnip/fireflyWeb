@@ -40,7 +40,7 @@ export default function LoginScreen() {
   };
 
   const handleRegistrationAndLogin = async () => {
-  const isValidEmailAddress = validator.isEmail(email);
+    const isValidEmailAddress = validator.isEmail(email);
     setError((e) => ({ ...e, password: null }));
     if (isValidEmailAddress) {
       try {
