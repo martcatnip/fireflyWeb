@@ -1,0 +1,7 @@
+{
+  "name": "firefly",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

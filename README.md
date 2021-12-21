@@ -26,6 +26,6 @@ $ npm install -g @capacitor/storage @capacitor/filesystem
 4. Run the app:
 
 ```bash
-$ npm install -g @ionic/cli
+$ ionic serve
 ```
 
