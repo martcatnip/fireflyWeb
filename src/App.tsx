@@ -33,7 +33,7 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/page/Inbox" />
+              <Redirect to="/page/录入打卡数据" />
             </Route>
             <Route path="/page/:name" exact={true}>
               <Page />
