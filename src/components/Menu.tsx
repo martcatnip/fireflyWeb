@@ -22,6 +22,14 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: '录入打卡数据',
+    url: '/page/punch-card-data-entry',
+  },
+  {
+    title: '录入游戏数据',
+    url: '/page/game-data-entry',
+  },
+  /*{
+    title: '录入打卡数据',
     url: '/page/录入打卡数据',
   },
     {
@@ -43,7 +51,7 @@ const appPages: AppPage[] = [
   {
     title: '学生个人进展',
     url: '/page/学生个人进展',
-  }
+  }*/
 ];
 
 const Menu: React.FC = () => {

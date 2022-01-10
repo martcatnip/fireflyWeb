@@ -22,6 +22,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import PunchCardDataEntry from "./pages/PunchCardDataEntry";
+import GameDataEntry from "./pages/GameDataEntry";
 
 setupIonicReact();
 
@@ -33,11 +35,13 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/page/录入打卡数据" />
-            </Route>
+              <Redirect to="/page/punch-card-data-entry" />
+            </Route>{/*
             <Route path="/page/:name" exact={true}>
               <Page />
-            </Route>
+            </Route>*/}
+            <Route path="/page/punch-card-data-entry" exact={true} component={PunchCardDataEntry} />
+            <Route path="/page/game-data-entry" exact={true} component={GameDataEntry} />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
