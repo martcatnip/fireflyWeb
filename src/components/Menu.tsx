@@ -25,33 +25,25 @@ const appPages: AppPage[] = [
     url: '/page/punch-card-data-entry',
   },
   {
+    title: '录入朗读数据',
+    url: '/page/reading-data-entry',
+  },
+  {
     title: '录入游戏数据',
     url: '/page/game-data-entry',
   },
-  /*{
-    title: '录入打卡数据',
-    url: '/page/录入打卡数据',
-  },
-    {
-    title: '录入朗读数据',
-    url: '/page/录入朗读数据',
-  },
-  {
-    title: '录入游戏数据',
-    url: '/page/录入游戏数据',
-  },
   {
     title: '输出游戏数据',
-    url: '/page/输出游戏数据',
+    url: '/page/game-data-display',
   },
   {
     title: '学生整体进展',
-    url: '/page/学生整体进展',
+    url: '/page/overall-progress',
   },
   {
     title: '学生个人进展',
-    url: '/page/学生个人进展',
-  }*/
+    url: '/page/individual-progress',
+  }
 ];
 
 const Menu: React.FC = () => {
