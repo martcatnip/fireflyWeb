@@ -1,6 +1,8 @@
 import {useParams} from "react-router";
-import {IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
+import {IonButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar} from "@ionic/react";
 import ExploreContainer from "./ExploreContainer";
+
+import '../pages/Page.css';
 
 interface TemplateProps {
     name: string,
@@ -13,6 +15,9 @@ const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, children}) =
         <IonPage>
             <IonHeader>
                 <IonToolbar>
+                    <IonButtons slot="start">
+                        <IonMenuButton />
+                    </IonButtons>
                     <IonTitle>{title}</IonTitle>
                 </IonToolbar>
             </IonHeader>
