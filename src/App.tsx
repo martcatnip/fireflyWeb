@@ -28,6 +28,7 @@ import GameDataEntry from "./pages/GameDataEntry";
 import GameDataDisplay from "./pages/GameDataDisplay";
 import OverallProgress from "./pages/OverallProgress";
 import IndividualProgress from "./pages/IndividualProgress";
+import Help from "./pages/Help";
 
 setupIonicReact();
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
             <Route path="/page/game-data-display" exact={true} component={GameDataDisplay} />
             <Route path="/page/overall-progress" exact={true} component={OverallProgress} />
             <Route path="/page/individual-progress" exact={true} component={IndividualProgress} />
+            <Route path="/page/help" exact={true} component={Help} />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
