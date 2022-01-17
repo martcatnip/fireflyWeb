@@ -43,6 +43,10 @@ const appPages: AppPage[] = [
   {
     title: '学生个人进展',
     url: '/page/individual-progress',
+  },
+  {
+    title: 'Games (temporary)',
+    url: '/page/games',
   }
 ];
 
