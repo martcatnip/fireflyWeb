@@ -28,8 +28,10 @@ const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, children}) =
                     </IonToolbar>
                 </IonHeader>
 
+                <div style={{padding: '30px'}}>
                 {/* children is the component occupying the "slot" in parent component */}
                 {children}
+                </div>
             </IonContent>
         </IonPage>
     );
