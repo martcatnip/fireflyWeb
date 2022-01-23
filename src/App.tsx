@@ -2,7 +2,6 @@ import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/r
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -29,6 +28,7 @@ import GameDataDisplay from "./pages/GameDataDisplay";
 import OverallProgress from "./pages/OverallProgress";
 import IndividualProgress from "./pages/IndividualProgress";
 import Help from "./pages/Help";
+import Games from "./pages/Games";
 
 setupIonicReact();
 
@@ -49,6 +49,9 @@ const App: React.FC = () => {
             <Route path="/page/overall-progress" exact={true} component={OverallProgress} />
             <Route path="/page/individual-progress" exact={true} component={IndividualProgress} />
             <Route path="/page/help" exact={true} component={Help} />
+
+            <Route path="/page/games" exact={true} component={Games} />
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
