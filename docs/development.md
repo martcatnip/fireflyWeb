@@ -103,14 +103,15 @@ TBD
 }
 ```
 
-### Project Volunteers/Staff
+### People
 
 ```
 {
-    "projectStaff": {
+    "People": {
         "1": {
-            "name": "staff name",
+            "name": "teacher/volunteer name",
             "school": "uniquely identifiable school name",
+            "birthYear": "optional year of birth, may help with identification",
             "roles": [
                 "role 1, e.g. teacher, volunteer, etc.",
                 "role 2"
@@ -118,26 +119,13 @@ TBD
             "secondaryId": "in case there are people with same name in the same school"
         },
         "2": {
-            "name": "staff name",
-            ....
-        }
-    }
-}
-```
-
-### Students
-
-```
-{
-    "students": {
-        "1": {
             "name": "student name",
             "school": "uniquely identifiable school name",
-            "age": "studnet age",
+            "birthYear": "year of birth, may help with identification",
+            "roles": [
+                "student"
+            ],
             "secondaryId": "in case there are people with same name in the same school"
-        },
-        "2": {
-            "name": "student name",
             ....
         }
     }
