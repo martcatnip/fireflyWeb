@@ -29,6 +29,8 @@ import OverallProgress from "./pages/OverallProgress";
 import IndividualProgress from "./pages/IndividualProgress";
 import Help from "./pages/Help";
 import Games from "./pages/Games";
+import People from "./pages/People";
+import ReadingActivities from "./pages/ReadingActivities";
 
 setupIonicReact();
 
@@ -50,7 +52,8 @@ const App: React.FC = () => {
             <Route path="/page/individual-progress" exact={true} component={IndividualProgress} />
             <Route path="/page/help" exact={true} component={Help} />
 
-            <Route path="/page/games" exact={true} component={Games} />
+            <Route path="/page/people" exact={true} component={People} />
+            <Route path="/page/reading-activities" exact={true} component={ReadingActivities} />
 
           </IonRouterOutlet>
         </IonSplitPane>
