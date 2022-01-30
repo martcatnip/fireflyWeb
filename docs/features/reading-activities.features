@@ -1,0 +1,47 @@
+Feature: 阅读活动记录列表 (尚未考虑操作权限)
+
+    Scenario: 缺省列表：仅按照活动日期时间倒序
+        Given I am on "/reading-activities" page
+        Then I see list of reading activities sorted by date/time with descending order
+        And I see "book, hostBy, datetime, participants count" in each item
+
+    Scenario: 列表数据过滤 (to be further expanded on what filters to implement allowed, e.g. "wild" textual search/filtering, by school, by teacher, by book, etc.)
+        Given I am on "/reading-activities" page
+        And apply one or more filter(s)
+        Then I see list of reading activities sorted by date/time with descending order
+        And I see "book, hostBy, datetime, participants count" in each item
+
+Feature: 查看单条阅读活动记录 (尚未考虑操作权限)
+
+    Scenario: 查看活动记录
+        Given I am on "/reading-activities" page
+        And I click on any item in the list
+        Then I see full details of the activity record: "book, hostBy, datetime, participants list, enteredBy"
+        And I see a link to go back to list page
+
+Feature: 录入新活动 (尚未考虑操作权限)
+
+    Scenario: 新活动录入表单
+        Given I am on "/reading-activities" page
+        And I click on button "新活动"
+        Then I see data entry form with fields "book, hostBy, datetime, participants list"
+        And I see read-only field "enteredBy" filled with current user information
+
+    Scenario: 新活动录入：无效数据 (to be further expanded, e.g. validation rules)
+        Given I am on new activity form
+        And I entered invalid data or empty data in any of the fields "book, hostBy, datetime, participants list"
+        And I click on button "保存"
+        Then I see error message
+
+    Scenario: 新活动录入：有效数据 (to be further expanded, e.g. validation rules)
+        Given I am on new activity form
+        And I entered valid data for all fields "book, hostBy, datetime, participants list"
+        And I click on button "保存"
+        Then I am back to "/reading-activities" page
+        And I see the new activity on top of the list (regardless of the current sorting order)
+
+Feature: 编辑活动记录 (尚未考虑操作权限)
+    # To be discussed
+
+Feature: 删除活动记录 (尚未考虑操作权限)
+    # To be discussed

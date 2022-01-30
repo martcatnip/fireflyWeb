@@ -1,0 +1,5 @@
+Feature: 主页
+
+    Scenario: 初始版本：直接跳转到阅读活动记录页（未来可更改）
+        Given I am on page "/"
+        Then I am redirected to page "/reading-activities"

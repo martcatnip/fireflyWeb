@@ -180,4 +180,8 @@ TBD
 
 ---
 
+[System behaviors](./features/features.md)
+
+--- 
+
 **WORK IN PROGRESS**

@@ -68,7 +68,8 @@ const ActivityForm: React.FC<ActivityFormProps> = ({afterSave, onCancel, oldActi
         })
     }
     const formatDate = (value: string) => {
-        return format(parseISO(value), 'MMM dd yyyy HH:ii:ss');
+        return parseISO(value);
+        return format(parseISO(value), 'MMM dd yyyy');
     };
 
     const datetimeChanged = (e: any) => updateActivity('activityDate', formatDate(e.detail.value!))
@@ -140,7 +141,7 @@ const ActivityForm: React.FC<ActivityFormProps> = ({afterSave, onCancel, oldActi
                         />
                     </IonItem>
                     <IonItem>
-                        <IonInput placeholder="日期时间 (缺省为当前时间)"
+                        <IonInput placeholder="日期时间"
                                   value={activity.activityDate}
                                   onIonChange={(e) => updateActivity('activityDate', e.detail.value || '')}
                         />
@@ -191,13 +192,12 @@ const ActivityForm: React.FC<ActivityFormProps> = ({afterSave, onCancel, oldActi
                     </IonItem>*/}
                 </IonList>
 
-
                 <section>
-                    <IonBadge color="light" className="ion-margin-horizontal">学生甲</IonBadge>
-                    <IonBadge color="light" className="ion-margin-horizontal">学生乙</IonBadge>
-                    <IonBadge color="light" className="ion-margin-horizontal">学生丙</IonBadge>
-                    <IonBadge color="light" className="ion-margin-horizontal">学生丁</IonBadge>
-                    <IonBadge color="light" className="ion-margin-horizontal">学生戊</IonBadge>
+                    <IonBadge color="light" className="ion-padding ion-margin-horizontal">学生甲</IonBadge>
+                    <IonBadge color="light" className="ion-padding ion-margin-horizontal">学生乙</IonBadge>
+                    <IonBadge color="light" className="ion-padding ion-margin-horizontal">学生丙</IonBadge>
+                    <IonBadge color="light" className="ion-padding ion-margin-horizontal">学生丁</IonBadge>
+                    <IonBadge color="light" className="ion-padding ion-margin-horizontal">学生戊</IonBadge>
                 </section>
             </IonContent>
         </IonPage>
