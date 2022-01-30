@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.web.firefly',
-  appName: 'firefly',
+  appId: 'app.firefly',
+  appName: 'Firefly Reading Project',
   webDir: 'build',
   bundledWebRuntime: false
 };

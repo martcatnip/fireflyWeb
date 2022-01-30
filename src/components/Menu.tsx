@@ -2,12 +2,14 @@ import {
   IonContent,
   IonIcon,
   IonItem,
+    IonItemDivider,
   IonLabel,
   IonList,
   IonListHeader,
   IonMenu,
   IonMenuToggle,
   IonNote,
+    IonText,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
@@ -20,6 +22,20 @@ interface AppPage {
 }
 
 const appPages: AppPage[] = [
+  {
+    title: '阅读活动',
+    url: '/page/reading-activities',
+  },
+  {
+    title: '项目介绍',
+    url: '/page/about',
+  },
+
+  /*{
+    title: '-- 临时分割线 --',
+    url: '/',
+  },
+
   {
     title: '录入打卡数据',
     url: '/page/punch-card-data-entry',
@@ -45,9 +61,9 @@ const appPages: AppPage[] = [
     url: '/page/individual-progress',
   },
   {
-    title: 'Games (temporary)',
-    url: '/page/games',
-  }
+    title: 'People (temporary)',
+    url: '/page/people',
+  },*/
 ];
 
 const Menu: React.FC = () => {
@@ -56,7 +72,7 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="page-list">
-          <IonListHeader>萤火虫读书</IonListHeader>
+          <IonListHeader>萤火虫读书项目</IonListHeader>
           <IonNote>Reading is Fun!</IonNote>
 
           {appPages.map((appPage, index) => {

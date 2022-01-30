@@ -1,14 +1,26 @@
 import {useParams} from "react-router";
-import {IonButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar} from "@ionic/react";
+import {
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonMenuButton,
+    IonModal,
+    IonPage,
+    IonTitle,
+    IonToolbar
+} from "@ionic/react";
 
 import '../pages/Page.css';
+import {ReactElement} from "react";
 
 interface TemplateProps {
     name: string,
-    nameDisplay?: string
+    nameDisplay?: string,
+    titleExtra?: ReactElement<any>,
 }
 
-const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, children}) => {
+const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, titleExtra, children}) => {
     const title = nameDisplay || name.replace('-', ' ')
     return (
         <IonPage>
@@ -18,6 +30,7 @@ const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, children}) =
                         <IonMenuButton />
                     </IonButtons>
                     <IonTitle>{title}</IonTitle>
+                    <p slot="end" className="ion-padding-horizontal">{titleExtra}</p>
                 </IonToolbar>
             </IonHeader>
 
@@ -28,10 +41,8 @@ const MainTemplate: React.FC<TemplateProps> = ({ name, nameDisplay, children}) =
                     </IonToolbar>
                 </IonHeader>
 
-                <div style={{padding: '30px'}}>
                 {/* children is the component occupying the "slot" in parent component */}
                 {children}
-                </div>
             </IonContent>
         </IonPage>
     );

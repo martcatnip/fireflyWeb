@@ -27,12 +27,39 @@ import GameDataEntry from "./pages/GameDataEntry";
 import GameDataDisplay from "./pages/GameDataDisplay";
 import OverallProgress from "./pages/OverallProgress";
 import IndividualProgress from "./pages/IndividualProgress";
-import Help from "./pages/Help";
+import About from "./pages/About";
 import Games from "./pages/Games";
+import People from "./pages/People";
+import ReadingActivities from "./pages/ReadingActivities";
 
 setupIonicReact();
 
 const App: React.FC = () => {
+  const browser = navigator.userAgent.toLowerCase()
+  const isWechat = browser.indexOf('wechat') >= 0 || browser.indexOf('wexin') >= 0
+
+  if (isWechat) {
+    return (
+        <div className="ion-padding">
+          <div style={{ borderBottom: 'solid 1px lightgrey' }}>
+            <p className="ion-margin-top">Good System 网站在微信环境中有可能无法正常运行。请转到手机浏览器：</p>
+            <ol>
+              <li>点击右上角菜单（三个点） ↗ </li>
+              <li>点击在浏览器中打开的菜单选项</li>
+            </ol>
+          </div>
+
+          <div>
+            <p>This application may not work properly in WeChat environment. Please do the following:</p>
+            <ol>
+              <li>Click on the three-dot menu on top right ↗ </li>
+              <li>Click on open in browser</li>
+            </ol>
+          </div>
+        </div>
+    )
+  }
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -40,7 +67,7 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/page/punch-card-data-entry" />
+              <Redirect to="/page/about" />
             </Route>{}
             <Route path="/page/punch-card-data-entry" exact={true} component={PunchCardDataEntry} />
             <Route path="/page/reading-data-entry" exact={true} component={ReadingDataEntry} />
@@ -48,9 +75,10 @@ const App: React.FC = () => {
             <Route path="/page/game-data-display" exact={true} component={GameDataDisplay} />
             <Route path="/page/overall-progress" exact={true} component={OverallProgress} />
             <Route path="/page/individual-progress" exact={true} component={IndividualProgress} />
-            <Route path="/page/help" exact={true} component={Help} />
+            <Route path="/page/about" exact={true} component={About} />
 
-            <Route path="/page/games" exact={true} component={Games} />
+            <Route path="/page/people" exact={true} component={People} />
+            <Route path="/page/reading-activities" exact={true} component={ReadingActivities} />
 
           </IonRouterOutlet>
         </IonSplitPane>
