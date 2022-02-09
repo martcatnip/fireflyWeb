@@ -21,16 +21,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import PunchCardDataEntry from "./pages/PunchCardDataEntry";
-import ReadingDataEntry from "./pages/ReadingDataEntry";
-import GameDataEntry from "./pages/GameDataEntry";
-import GameDataDisplay from "./pages/GameDataDisplay";
-import OverallProgress from "./pages/OverallProgress";
-import IndividualProgress from "./pages/IndividualProgress";
-import About from "./pages/About";
-import Games from "./pages/Games";
-import People from "./pages/People";
-import ReadingActivities from "./pages/ReadingActivities";
+import { Pages } from './pages/index'
 
 setupIonicReact();
 
@@ -69,17 +60,31 @@ const App: React.FC = () => {
             <Route path="/" exact={true}>
               <Redirect to="/page/about" />
             </Route>{}
-            <Route path="/page/punch-card-data-entry" exact={true} component={PunchCardDataEntry} />
+            {/*<Route path="/page/punch-card-data-entry" exact={true} component={PunchCardDataEntry} />
             <Route path="/page/reading-data-entry" exact={true} component={ReadingDataEntry} />
             <Route path="/page/game-data-entry" exact={true} component={GameDataEntry} />
             <Route path="/page/game-data-display" exact={true} component={GameDataDisplay} />
-            <Route path="/page/overall-progress" exact={true} component={OverallProgress} />
+            */}
+
+              {
+                  Object.keys(Pages).map((key: string) => {
+                      const page = Pages[key]
+                      return <Route key={key} path={'/page' + page.url} exact={true} component={page.component} />
+                  })
+              }
+              {/*<Route path="/page/about" exact={true} component={Pages.about.component} />
+              <Route path="/page/about" exact={true} component={Pages.about.component} />
+*/}
+            {/*<Route path="/page/overall-progress" exact={true} component={OverallProgress} />
             <Route path="/page/individual-progress" exact={true} component={IndividualProgress} />
+
             <Route path="/page/about" exact={true} component={About} />
 
+            <Route path="/page/books" exact={true} component={Books} />
             <Route path="/page/people" exact={true} component={People} />
             <Route path="/page/reading-activities" exact={true} component={ReadingActivities} />
-
+            <Route path="/page/reading-logs" exact={true} component={ReadingLogs} />
+            <Route path="/page/schools" exact={true} component={Schools} />*/}
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

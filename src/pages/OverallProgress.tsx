@@ -1,14 +1,11 @@
-import './OverallProgress.css';
-import MainTemplate from "../components/MainTemplate";
+import { MainLayout } from "../layouts/MainLayout";
 
 // Temporary name.  Change to something more appropriate when it's clear what that would be.
-const OverallProgress: React.FC = () => {
+export const OverallProgress: React.FC = () => {
     return (
-        <MainTemplate name="overall-progress" nameDisplay="学生整体进展">
+        <MainLayout pageName="overall-progress" pageNameDisplay="学生整体进展">
             学生整体进展表单 placeholder
-        </MainTemplate>
+        </MainLayout>
     );
 };
-
-export default OverallProgress;
 
