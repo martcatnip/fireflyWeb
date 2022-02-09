@@ -5,7 +5,6 @@ export type School = {
     city?: string,
     town?: string,
     village?: string,
-
 };
 
 export type PersonHistoryItem = {
@@ -37,3 +36,9 @@ export type ReadingActivity = {
     type: string, // game or reciting for now
     participants: Person[], // students
 };
+
+export enum ItemTypes {
+    BOOK = 'book',
+    READINGACTIVITY = 'readingActivity',
+    SCHOOL = 'school'
+}
